@@ -4,9 +4,9 @@ import { Link, NavLink } from "react-router-dom";
 import { FaSearch, FaShoppingCart, FaHeart, FaBars } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
 
-const items = ["Home", "Men", "Women", "Kids"];
+const items = ["Home", "Men", "Women", "Kids", "All Sports Equipment"];
 
-const Header = () => (
+const Navbar = () => (
   <header className="sticky top-0 z-50 bg-base-100 shadow-lg">
     <div className="container mx-auto flex items-center justify-between px-4 md:px-10 py-3">
       <Link to="/" className="text-3xl font-extrabold ">
@@ -41,10 +41,10 @@ const Header = () => (
         ))}
         <ThemeToggle />
         <Link
-          to="/signin"
+          to="/login"
           className="btn btn-warning px-5 py-2 text-sm font-semibold"
         >
-          Sign In
+          Login
         </Link>
         <button className="lg:hidden btn btn-ghost btn-circle p-2 hover:bg-base-200 transition">
           <FaBars />
@@ -53,4 +53,4 @@ const Header = () => (
     </div>
   </header>
 );
-export default Header;
+export default Navbar;
