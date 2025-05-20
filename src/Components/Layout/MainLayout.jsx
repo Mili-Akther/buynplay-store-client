@@ -4,9 +4,9 @@ import Navbar from "../Navbar";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="bg-black min-h-screen text-white overflow-x-hidden">
       <Navbar></Navbar>
-      <div className="max-w-8xl  mx-auto">
+      <div className="w-11/12 mx-auto ">
         <Outlet></Outlet>
       </div>
     </div>

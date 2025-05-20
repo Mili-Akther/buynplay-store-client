@@ -11,7 +11,7 @@ const items = ["Home", "Men", "Women", "Kids", "All Sports Equipment"];
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   return (
-    <header className="sticky top-0 z-50 bg-base-100 shadow-lg">
+    <header className="sticky top-0 z-50 bg-black">
       <div className="container mx-auto flex items-center justify-between px-4 md:px-10 py-3">
         <Link to="/" className="text-3xl font-extrabold ">
           BuyNPlay
@@ -23,7 +23,7 @@ const Navbar = () => {
               to={i === "Home" ? "/" : `/${i.toLowerCase()}`}
               end={i === "Home"}
               className={({ isActive }) =>
-                `text-lg font-medium transition-colors ${
+                `text-lg font-medium transition-colors   ${
                   isActive
                     ? "text-warning"
                     : "text-base-content hover:text-warning"

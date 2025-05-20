@@ -1,0 +1,27 @@
+[
+  {
+    "id":1,
+    "img": "https://i.ibb.co/CsB87P4Y/shoe1.png",
+    "title": "Gear Up. Game On.",
+    "desc": "Next Level Games",
+    "btn": "Explore Items"
+  },
+  {"id":2,
+    "img": "/assets/cycle.png",
+    "title": "Ride Like the Wind.",
+    "desc": "High-performance cycles for every terrain",
+    "btn": "Explore Cycles"
+  },
+  {"id":3,
+    "img": "/assets/tennis.png",
+    "title": "Smash the Court.",
+    "desc": "Professional badminton & tennis gear",
+    "btn": "Shop Rackets"
+  },
+  {"id":4,
+    "img": "/assets/basketball.png",
+    "title": "Play Like a Pro.",
+    "desc": "Basketballs built for champions",
+    "btn": "Shop Balls"
+  }
+]

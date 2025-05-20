@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Shop from "../Pages/Shop";
 import Register from "../Pages/Register";
+import Hero from "../Components/Sections/Hero";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        children: [
+          {
+            path: "/",
+            element: <Hero />,
+            loader: () => fetch("/slides.json"),
+          },
+        ],
       },
       {
         path: "/login",
