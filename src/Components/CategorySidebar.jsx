@@ -1,10 +1,10 @@
 
 const CategorySidebar = () => {
   return (
-    <div className="w-full max-w-[200px] text-white p-4">
-      <div className="mb-8">
-        <h3 className="text-orange-400 font-bold text-sm mb-2">SPORTS</h3>
-        <ul className="space-y-1 text-sm">
+    <div className="w-full text-white p-2 py-12">
+      <div className="mb-12">
+        <h3 className="text-orange-400 font-bold text-2xl mb-2">SPORTS</h3>
+        <ul className="space-y-1 text-md">
           <li>All Sports</li>
           <li>Basketball</li>
           <li>Cycling</li>
@@ -17,8 +17,8 @@ const CategorySidebar = () => {
         </ul>
       </div>
       <div>
-        <h3 className="text-orange-400 font-bold text-sm mb-2">CLOTHING</h3>
-        <ul className="space-y-1 text-sm">
+        <h3 className="text-orange-400 font-bold text-2xl mb-2">CLOTHING</h3>
+        <ul className="space-y-1 text-md">
           <li>All Clothing</li>
           <li>Hoodies</li>
           <li>Jackets/Track Tops</li>

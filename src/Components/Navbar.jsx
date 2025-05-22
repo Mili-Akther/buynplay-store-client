@@ -1,39 +1,49 @@
 import { Link, NavLink } from "react-router-dom";
-import { FaSearch, FaShoppingCart, FaHeart, FaBars } from "react-icons/fa";
+import { useContext } from "react";
+import { FaSearch, FaHeart, FaShoppingCart, FaBars } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 import ThemeToggle from "./ThemeToggle";
 import { AuthContext } from "../Providers/AuthProvider";
-import { useContext } from "react";
-import { CgProfile } from "react-icons/cg";
-
-const items = ["Home", "Men", "Women", "Kids", "All Sports Equipment"];
-
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+
   return (
-    <header className="sticky top-0 z-50 bg-black">
+    <header className="sticky top-0 z-50 bg-black text-white">
       <div className="container mx-auto flex items-center justify-between px-4 md:px-10 py-3">
-        <Link to="/" className="text-3xl font-extrabold ">
+        <Link to="/" className="text-3xl font-extrabold">
           BuyNPlay
         </Link>
-        <nav className="hidden lg:flex space-x-8">
-          {items.map((i) => (
-            <NavLink
-              key={i}
-              to={i === "Home" ? "/" : `/${i.toLowerCase()}`}
-              end={i === "Home"}
-              className={({ isActive }) =>
-                `text-lg font-medium transition-colors   ${
-                  isActive
-                    ? "text-warning"
-                    : "text-base-content hover:text-warning"
-                }`
-              }
-            >
-              {i}
-            </NavLink>
-          ))}
+
+        <nav className="hidden lg:flex space-x-6 items-center">
+          <NavLink to="/" end className="hover:text-warning">
+            Home
+          </NavLink>
+          <NavLink to="/men" className="hover:text-warning">
+            Men
+          </NavLink>
+          <NavLink to="/women" className="hover:text-warning">
+            Women
+          </NavLink>
+          <NavLink to="/kids" className="hover:text-warning">
+            Kids
+          </NavLink>
+          <NavLink to="/all-sports-equipment" className="hover:text-warning">
+            All Sports Equipment
+          </NavLink>
+
+          {user && (
+            <>
+              <NavLink to="/add-equipment" className="hover:text-warning">
+                Add Equipment
+              </NavLink>
+              <NavLink to="/my-equipment" className="hover:text-warning">
+                My Equipment List
+              </NavLink>
+            </>
+          )}
         </nav>
+
         <div className="flex items-center space-x-3">
           {[FaSearch, FaHeart, FaShoppingCart].map((Icon, idx) => (
             <button
@@ -43,7 +53,10 @@ const Navbar = () => {
               <Icon />
             </button>
           ))}
+
           <ThemeToggle />
+
+          {/* user profile  */}
           <div className="">
             {user && user?.email ? (
               <div>
@@ -58,17 +71,19 @@ const Navbar = () => {
           {user && user?.email ? (
             <button
               onClick={logOut}
-              className="btn btn-warning px-5 py-2 text-sm font-semibold"
+              className="btn btn-warning px-4 py-2 text-sm font-semibold"
             >
-              Log-Out
+              Logout
             </button>
           ) : (
-            <Link
-              to="/login"
-              className="btn btn-warning px-5 py-2 text-sm font-semibold"
-            >
-              Login
-            </Link>
+            
+              <NavLink
+                to="/login"
+                className="btn btn-warning px-4 py-2 text-sm font-semibold"
+              >
+                Login
+              </NavLink>
+        
           )}
 
           <button className="lg:hidden btn btn-ghost btn-circle p-2 hover:bg-base-200 transition">
@@ -79,4 +94,5 @@ const Navbar = () => {
     </header>
   );
 };
+
 export default Navbar;

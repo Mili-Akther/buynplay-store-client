@@ -2,36 +2,48 @@ import ProductCard from "./ProductCard";
 
 const products = [
   {
-    title: "Laura Sport Bra",
-    category: "Sports Bra",
+    title: "lightweight fitness jacket",
+    category: "fitness jacket",
     price: 85,
-    img: "https://via.placeholder.com/150x150?text=Bra",
+    img: "https://i.ibb.co/c9JRgBJ/gym-jacket.png",
   },
   {
-    title: "Grey Star Duffle Bag",
+    title: "Running Belt",
     category: "Accessories",
     price: 119,
-    img: "https://via.placeholder.com/150x150?text=Bag",
+    img: "https://i.ibb.co/LDSm5Myw/Running-belt.png",
     isNew: true,
   },
   {
-    title: "The Crave Red Block",
+    title: "Handball Spezial Shoes",
     category: "Shoes Collection",
     price: 150,
-    img: "https://via.placeholder.com/150x150?text=Shoes",
+    img: "https://i.ibb.co/Kxt0SphQ/Handball-Spezial-Shoes.png",
     isNew: true,
   },
   {
-    title: "Rodinson Blue",
+    title: "emirates",
     category: "Shirts/Tops",
     price: 75,
-    img: "https://via.placeholder.com/150x150?text=Shirt",
+    img: "https://i.ibb.co/9kk2YSpX/Emirates-tshirt.png",
+  },
+  {
+    title: "Cricket Bat ",
+    category: "Cricket Sports Equipment",
+    price: 75,
+    img: "https://i.ibb.co/jXsJ3G8/cricket-item.png",
+  },
+  {
+    title: "Dumbbells",
+    category: "Gym Equipments",
+    price: 75,
+    img: "https://i.ibb.co/35G2WF1W/dumbbells.png",
   },
 ];
 
 const ProductGrid = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {products.map((p, i) => (
         <ProductCard key={i} {...p} />
       ))}

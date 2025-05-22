@@ -10,14 +10,20 @@ const ProductCard = ({ title, category, price, img, isNew }) => {
       <img
         src={img}
         alt={title}
-        className="w-full h-40 object-contain mx-auto"
+        className="w-full h-60 object-contain mx-auto"
       />
+
       <div className="mt-4">
         <h4 className="font-medium">{title}</h4>
         <p className="text-sm text-gray-400">{category}</p>
         <p className="font-semibold mt-1">${price}</p>
       </div>
-      <button className="absolute top-2 right-2 text-white">♡</button>
+      
+        <button className="bg-orange-500 text-white px-2 py-2 hover:bg-orange-600 text-sm rounded-full flex mx-auto">
+          View Details
+        </button>
+
+      <button className="absolute top-2 right-2 text-white text-3xl">♡</button>
     </div>
   );
 };

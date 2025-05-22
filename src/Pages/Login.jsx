@@ -2,9 +2,13 @@ import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import { auth } from "../Firebase/firebase.init";
+import { toast } from "react-toastify";
 
 // src/components/Login.jsx
 const Login = () => {
+  const provider = new GoogleAuthProvider();
   const { userLogin, setUser } = useContext(AuthContext);
   const [error, setError] = useState({});
   const location = useLocation();
@@ -19,11 +23,24 @@ const Login = () => {
     userLogin(email, password)
       .then((result) => {
         const user = result.user;
+        toast.success("Logged in successfully!");
         setUser(user);
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         setError({ ...error, login: err.code });
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        setUser(result.user);
+        toast.success("Logged in with Google!");
+        navigate(location?.state?.from?.pathname || "/");
+      })
+      .catch((error) => {
+        toast.error("Google Login Failed: " + error.message);
       });
   };
   return (
@@ -89,7 +106,7 @@ const Login = () => {
           <span className="text-gray-400 text-sm">or</span>
         </div>
 
-        <button className="w-full flex items-center justify-center gap-2 bg-red-500 text-white py-2 rounded hover:bg-red-600 transition">
+        <button onClick={handleGoogleSignIn} className="w-full flex items-center justify-center gap-2 bg-red-500 text-white py-2 rounded hover:bg-red-600 transition">
           <FaGoogle></FaGoogle>
           Continue with Google
         </button>

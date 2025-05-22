@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 px-4 md:px-20 relative shadow-[inset_0_-40px_50px_-30px_rgba(255,110,0,0.3)] shadow-orange-500">
+    <footer className=" bg-black text-white py-10 px-4 md:px-20 relative shadow-[inset_0_-40px_50px_-30px_rgba(255,110,0,0.3)] shadow-orange-500">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

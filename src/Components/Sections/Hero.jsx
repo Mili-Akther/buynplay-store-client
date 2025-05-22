@@ -73,7 +73,7 @@ const Hero = () => (
             </h1>
           </div>
           {/* Left Content */}
-          <div className="flex-1 max-w-sm space-y-6 mt-24">
+          <div className="flex-1 max-w-sm space-y-6 mt-22">
             <p className="text-lg text-gray-300 whitespace-pre-line">
               {s.desc}
             </p>
@@ -83,14 +83,14 @@ const Hero = () => (
           </div>
 
           {/* Right Image with priceCard Card */}
-          <div className="relative flex-1 flex justify-center items-center -mt-[312px] ">
+          <div className="relative flex-1 flex justify-center items-center -mt-[315px] ">
             <img
               src={s.img}
               alt={s.title}
               className="w-full z-10 max-w-md drop-shadow-[0_0_40px_rgba(255,140,0,0.6)] transition-transform "
             />
           </div>
-          <div className="-mb-12 absolute bottom-14 right-32 priceCard-card text-white max-w-md flex items-center justify-between space-x-4 space-y-6">
+          <div className="-mb-12 absolute bottom-14 right-32 product-card text-white max-w-md flex items-center justify-between space-x-4 space-y-6">
             <div className="m-4">
               <h3 className="text-lg font-semibold">
                 {s.priceCard?.name || "priceCard Name"}

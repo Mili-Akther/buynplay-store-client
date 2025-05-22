@@ -62,9 +62,7 @@ const Register = () => {
               placeholder="Enter your name"
             />
           </div>
-          {/* {error.name && (
-            // <label className="block text-xs text-red-500">{error.name}</label>
-          )} */}
+        
           <div className="mb-4">
             <label className="block text-sm font-medium">Photo URL</label>
             <input

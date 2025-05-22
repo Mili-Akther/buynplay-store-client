@@ -5,6 +5,12 @@ import Login from "../Pages/Login";
 import Shop from "../Pages/Shop";
 import Register from "../Pages/Register";
 import Hero from "../Components/Sections/Hero";
+import MyEquipmentList from "../Pages/MyEquipmentList";
+import AddEquipment from "../Pages/AddEquipment";
+import PrivateRoute from "./PrivateRoute";
+import AllSportsEquipment from "../Pages/AllSportsEquipment";
+import UpdateEquipment from "../Pages/UpdateEquipment";
+
 
 const router = createBrowserRouter([
   {
@@ -33,6 +39,35 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop></Shop>,
+      },
+      {
+        path: "/all-sports-equipment",
+        element: <AllSportsEquipment></AllSportsEquipment>,
+      },
+      {
+        path: "/add-equipment",
+        element: 
+          <PrivateRoute>
+            <AddEquipment></AddEquipment>
+          </PrivateRoute>   
+      },
+      {
+        path: "/updateEquipment/:id",
+        element: 
+          <PrivateRoute>
+            <UpdateEquipment></UpdateEquipment>
+          </PrivateRoute>,
+          loader: ({params}) =>fetch(`http://localhost:5000/equipment/${params.id}`)
+        
+      },
+      {
+        path: "/my-equipment",
+        element: 
+          <PrivateRoute>
+            <MyEquipmentList></MyEquipmentList>
+          </PrivateRoute>,
+          loader: () => fetch('http://localhost:5000/equipment')
+                 
       },
     ],
   },
