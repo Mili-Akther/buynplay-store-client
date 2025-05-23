@@ -10,6 +10,8 @@ import AddEquipment from "../Pages/AddEquipment";
 import PrivateRoute from "./PrivateRoute";
 import AllSportsEquipment from "../Pages/AllSportsEquipment";
 import UpdateEquipment from "../Pages/UpdateEquipment";
+import ViewDetails from "../Pages/ViewDetails";
+import Error from "../Components/Error";
 
 
 const router = createBrowserRouter([
@@ -46,30 +48,45 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-equipment",
-        element: 
+        element: (
           <PrivateRoute>
             <AddEquipment></AddEquipment>
-          </PrivateRoute>   
+          </PrivateRoute>
+        ),
       },
       {
         path: "/updateEquipment/:id",
-        element: 
+        element: (
           <PrivateRoute>
             <UpdateEquipment></UpdateEquipment>
-          </PrivateRoute>,
-          loader: ({params}) =>fetch(`http://localhost:5000/equipment/${params.id}`)
-        
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/equipment/${params.id}`),
       },
       {
         path: "/my-equipment",
-        element: 
+        element: (
           <PrivateRoute>
             <MyEquipmentList></MyEquipmentList>
-          </PrivateRoute>,
-          loader: () => fetch('http://localhost:5000/equipment')
-                 
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/allequipment"),
+      },
+
+      {
+        path: "/equipment/:id",
+        element: (
+          <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
+        ),
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Error></Error>,
   },
 ]);
 

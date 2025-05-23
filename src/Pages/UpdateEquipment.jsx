@@ -230,7 +230,7 @@ const UpdateEquipment = () => {
             type="submit"
             className="btn btn-warning px-8 text-lg font-semibold"
           >
-            Add Equipment
+            Update Equipment
           </button>
         </div>
       </form>

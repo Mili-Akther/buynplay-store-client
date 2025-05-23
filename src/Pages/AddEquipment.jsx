@@ -7,9 +7,10 @@ const AddEquipment = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
+
+    
+
     const form = e.target;
-
-
     const name = form.name.value;
     const image = form.image.value;
     const category = form.category.value;
@@ -65,7 +66,7 @@ fetch("http://localhost:5000/equipment",{
         onSubmit={handleSubmit}
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
-      {/* name and email */}
+        {/* name and email */}
         <input
           type="email"
           value={user?.email || ""}
@@ -104,20 +105,33 @@ fetch("http://localhost:5000/equipment",{
           />
         </div>
 
-        {/* Category Name */}
+        {/* Category */}
         <div>
-          <label className="label font-semibold text-white">
-            Category Name
-          </label>
-          <input
-            type="text"
+          <select
             name="category"
-            placeholder="Sports / Cricket"
             className="input input-bordered w-full"
             required
-          />
+          >
+            <option value="">Select Category</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Cycling">Cycling</option>
+            <option value="Football">Football</option>
+            <option value="Golf">Golf</option>
+            <option value="Running">Running</option>
+            <option value="Swim">Swim</option>
+            <option value="Tenis">Tenis</option>
+            <option value="Training">Training</option>
+            <option value="Hoodies">Hoodies</option>
+            <option value="Jackets/Track Tops">Jackets/Track Tops</option>
+            <option value="Jerseys">Jerseys</option>
+            <option value="Pants/Thighs">Pants/Thighs</option>
+            <option value="Shirts/Tops">Shirts/Tops</option>
+            <option value="Shorts/Bottoms">Shorts/Bottoms</option>
+            <option value="Skirts">Skirts</option>
+            <option value="Sports Bra">Sports Bra</option>
+          </select>
         </div>
-
+        
         {/* Price */}
         <div>
           <label className="label font-semibold text-white">Price (USD)</label>
