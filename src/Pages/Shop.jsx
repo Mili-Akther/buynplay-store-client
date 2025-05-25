@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CategorySidebar from "../Components/CategorySidebar";
 import ProductGrid from "../Components/ProductGrid";
+import { Slide } from "react-awesome-reveal";
+import Loading from "./Loading";
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Sports");
@@ -12,29 +14,25 @@ const Shop = () => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        let url = "http://localhost:5000/equipment";
+        let url = "https://buy-n-play-server.vercel.app";
         if (!selectedCategory.trim().toLowerCase().includes("all")) {
           url += `?category=${encodeURIComponent(selectedCategory)}`;
         }
 
-        console.log("Fetching from URL:", url);
+        // console.log("Fetching from URL:", url);
         const res = await fetch(url);
         const data = await res.json();
         setProducts(data);
-        console.log("Fetching from URL:", url);
-
+        // console.log("Fetching from URL:", url);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
         setLoading(false);
-        
       }
     };
 
     fetchProducts();
   }, [selectedCategory]);
-
-  
 
   return (
     <div className=" mx-auto flex text-white">
@@ -53,11 +51,15 @@ const Shop = () => {
             </button>
           </Link>
         </div>
-      
+
         {loading ? (
-          <p className="text-white text-center py-6">Loading...</p>
+          <p className="text-white text-center py-6">
+            <Loading></Loading>
+          </p>
         ) : (
-          <ProductGrid products={products} />
+          <Slide direction="up" cascade damping={0.1} triggerOnce>
+            <ProductGrid products={products} />
+          </Slide>
         )}
       </main>
     </div>

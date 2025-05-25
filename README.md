@@ -1,12 +1,78 @@
-# React + Vite
+# 🎮 BuyNPlay - Sports Equipment E-Commerce Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BuyNPlay is a dynamic and responsive e-commerce web application designed for buying and selling sports equipment. It offers users a smooth browsing experience, product details, and the ability to manage their items — all built with modern tools and user-centric design.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 [Live Website](https://buynplay-store.web.app/)  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Technologies Used
+
+- **React JS** – Frontend library
+- **Tailwind CSS & DaisyUI** – Styling & responsive UI components
+- **React Router** – Page routing
+- **Node.js & Express.js** – Backend server
+- **MongoDB** – Database
+- **Firebase Auth** – Authentication system
+- **Custom Hooks** – React optimization
+- **JSON Server / Custom Backend API** – For data operations
+
+---
+
+## ✨ Key Features
+
+- 🔄 **Theme Toggle** – Light & Dark mode using CSS variables
+- 🛒 **All Sports Equipment** – View all items with image, category, and price
+- 🔍 **Sort Functionality** – Sort equipment by price (ascending)
+- ➕ **Add / Update Equipment** – Authenticated users can add and update products
+- 🔐 **Authentication** – Firebase login system with private routes
+- 📱 **Fully Responsive** – Optimized for mobile, tablet, and desktop
+- ⚡ **Dynamic Routing** – Product details pages with React Router
+- 🔁 **Reusable Components** – DRY principles followed in design
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Screenshot](./screenshots/home.png)
+
+---
+
+## 📁 Folder Structure (Client)
+
+buynplay-store-client/
+├── public/
+├── src/
+│ ├── components/
+│ ├── Hero/
+| ├── Layout/  
+| ├── Section/ 
+| ├── ThemeToggle/
+| ├── Pages/
+│ ├── Provider/
+│ ├── Router/
+│ ├── main.jsx
+│ └── index.css
+├── package.json
+└── package.json
+
+
+---
+
+## 🚀 How to Run Locally
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/Mili-Akthere/BuyNPlay.git
+
+# 2. Go to the project directory
+cd buynplay-store-client
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev

@@ -3,12 +3,9 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const AddEquipment = () => {
-      const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-
-    
 
     const form = e.target;
     const name = form.name.value;
@@ -21,7 +18,6 @@ const AddEquipment = () => {
     const customization = form.customization.value;
     const description = form.description.value;
 
-
     const newEquipment = {
       name,
       image,
@@ -33,29 +29,28 @@ const AddEquipment = () => {
       customization,
       description,
     };
-    console.log(newEquipment);
+    // console.log(newEquipment);
 
-//     send data to the server
-fetch("http://localhost:5000/equipment",{
-      method: 'POST',
-      headers:{
-            'content-type': 'application/json'
+    //     send data to the server
+    fetch("https://buy-n-play-server.vercel.app", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body: JSON.stringify(newEquipment)
-})
-.then(res => res.json())
-.then(data => {
-      console.log(data);
-      if(data.insertedId){
-            Swal.fire({
-              title: "Success",
-              text: "Equipment Added Successfully",
-              icon: "success",
-              confirmButtonText: "Cool",
-            });
-      }
-})
-    
+      body: JSON.stringify(newEquipment),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success",
+            text: "Equipment Added Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   };
 
   return (

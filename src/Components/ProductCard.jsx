@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-  if (!product) return null;
 
   const { title, category, price, image, isNew, _id } = product;
 

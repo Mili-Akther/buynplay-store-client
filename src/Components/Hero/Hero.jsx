@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "./hero.css"
-
 import shoe1 from "../../../src/assets/images/shoe1.png";
 import cycle from "../../../src/assets/images/cycle.png";
 import tennis from "../../../src/assets/images/tennis.2.png";

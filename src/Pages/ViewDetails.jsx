@@ -7,13 +7,17 @@ const ViewDetails = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/equipment/${id}`)
+    fetch(`https://buy-n-play-server.vercel.app/equipment/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
 
   if (!product) {
-    return <div className="text-center py-10"><Loading></Loading></div>;
+    return (
+      <div className="text-center py-10">
+        <Loading></Loading>
+      </div>
+    );
   }
 
   return (
@@ -23,7 +27,7 @@ const ViewDetails = () => {
         <img
           src={product.images?.[0] || product.image}
           alt={product.name}
-          className="w-full h-[450px] object-cover rounded-md shadow"
+          className="w-full h-full  rounded-md shadow"
         />
         <div className="flex space-x-2">
           {(product.images || [product.image]).map((img, idx) => (
@@ -38,13 +42,11 @@ const ViewDetails = () => {
       </div>
 
       {/* Right Info */}
-      <div>
+      <div className=" mt-12">
         <h3 className="text-gray-500 text-sm">
           {product.brand || "Generic Brand"}
         </h3>
-        <h1 className="text-2xl md:text-3xl font-bold text-white mt-1">
-          {product.name}
-        </h1>
+        <h1 className="text-2xl md:text-3xl font-bold mt-1">{product.name}</h1>
         <div className="flex items-center gap-4 mt-3">
           {product.oldPrice && (
             <span className="line-through text-gray-400 text-lg">
@@ -64,7 +66,7 @@ const ViewDetails = () => {
 
         {/* Description */}
         {product.description && (
-          <p className="text-white mt-6">
+          <p className=" mt-6">
             Description: <br />
             {product.description}
           </p>

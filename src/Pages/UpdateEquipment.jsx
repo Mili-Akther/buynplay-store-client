@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import { AuthContext } from '../Providers/AuthProvider';
+import React, { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const UpdateEquipment = () => {
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const equipment = useLoaderData();
   const {
     name,
@@ -45,10 +45,10 @@ const UpdateEquipment = () => {
       description,
     };
 
-    console.log(updatedEquipment);
+    // console.log(updatedEquipment);
 
     // send data to the server
-    fetch(`http://localhost:5000/equipment/${_id}`, {
+    fetch(`https://buy-n-play-server.vercel.app/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -203,7 +203,7 @@ const UpdateEquipment = () => {
             Customization
           </label>
           <input
-           defaultValue={customization}
+            defaultValue={customization}
             type="text"
             name="customization"
             placeholder="Bat with extra grip, hit paper etc."
@@ -238,5 +238,4 @@ const UpdateEquipment = () => {
   );
 };
 
-
-export default UpdateEquipment;           
+export default UpdateEquipment;

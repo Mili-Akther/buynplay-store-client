@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const AllSportsEquipment = () => {
   const [equipmentList, setEquipment] = useState([]);
-  
+
   useEffect(() => {
-    fetch("http://localhost:5000/allequipment")
+    fetch("https://buy-n-play-server.vercel.app/allequipment")
       .then((res) => res.json())
       .then((data) => {
-        setEquipment(data); 
+        setEquipment(data);
       });
   }, []);
 
@@ -16,13 +16,10 @@ const AllSportsEquipment = () => {
     const sorted = [...equipmentList].sort((a, b) => a.price - b.price);
     setEquipment(sorted);
   };
-  
-  
+
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-12">
-      <h2 className="text-2xl font-bold mb-6 ">
-        All Sports Equipment
-      </h2>
+      <h2 className="text-2xl font-bold mb-6 ">All Sports Equipment</h2>
       {/* sort button */}
       <div className="flex justify-end mb-4">
         <button
@@ -73,6 +70,5 @@ const AllSportsEquipment = () => {
     </div>
   );
 };
-
 
 export default AllSportsEquipment;

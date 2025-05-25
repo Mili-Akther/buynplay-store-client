@@ -14,17 +14,17 @@ const Register = () => {
     const email = form.get("email");
     const photo = form.get("photo");
     const password = form.get("password");
-    console.log({ name, email, photo, password });
+    // console.log({ name, email, photo, password });
     if (!/[A-Z]/.test(password)) {
-      alert("Password must contain at least one uppercase letter.");
+      toast.error("Password must contain at least one uppercase letter.");
       return;
     }
     if (!/[a-z]/.test(password)) {
-      alert("Password must contain at least one lowercase letter.");
+      toast.error("Password must contain at least one lowercase letter.");
       return;
     }
     if (password.length < 6) {
-      toast.alert("Password must be at least 6 characters long.");
+      toast.error("Password must be at least 6 characters long.");
       return;
     }
 
@@ -38,7 +38,7 @@ const Register = () => {
         });
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       })
 
       .catch((error) => {

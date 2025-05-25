@@ -1,12 +1,12 @@
-import React from 'react';
-import { FaEdit, FaEye, FaRegTrashAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import React from "react";
+import { FaEdit, FaEye, FaRegTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const MyEquipmentCard = ({ equipment,equipments, setEquipments }) => {
+const MyEquipmentCard = ({ equipment, equipments, setEquipments }) => {
   const { name, image, category, price, customization, _id } = equipment;
   const handleDelete = (_id) => {
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -17,19 +17,19 @@ const MyEquipmentCard = ({ equipment,equipments, setEquipments }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/equipment/${_id}`, {
+        fetch(`https://buy-n-play-server.vercel.app/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
                 text: "Your equipment has been deleted.",
                 icon: "success",
               });
-              const remaining = equipments.filter(equ => equ._id !== _id);
+              const remaining = equipments.filter((equ) => equ._id !== _id);
               setEquipments(remaining);
             }
           });
