@@ -2,8 +2,9 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { FaSearch, FaHeart, FaShoppingCart, FaBars } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
-import ThemeToggle from "./ThemeToggle";
+
 import { AuthContext } from "../Providers/AuthProvider";
+import ThemeToggle from "./ThemeToggle/ThemeToggle";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);

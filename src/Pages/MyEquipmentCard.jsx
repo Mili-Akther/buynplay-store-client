@@ -37,7 +37,7 @@ const MyEquipmentCard = ({ equipment,equipments, setEquipments }) => {
     });
   };
   return (
-    <div className="bg-gray-50 p-4 rounded-lg shadow-sm flex items-center space-x-4 hover:shadow-md transition-shadow">
+    <div className="bg-gray-300 p-4 rounded-lg shadow-sm flex items-center space-x-4 hover:shadow-md transition-shadow">
       {/* equipment Image */}
       <div className="w-42 h-42 flex-shrink-0">
         {name === " ProGrip Basketball" ? (

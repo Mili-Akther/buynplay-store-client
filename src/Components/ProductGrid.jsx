@@ -87,7 +87,7 @@ import ProductCard from "./ProductCard";
 const ProductGrid = ({ selectedCategory }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+  console.log(products);
 
   useEffect(() => {
     setLoading(true);
@@ -119,7 +119,9 @@ const ProductGrid = ({ selectedCategory }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {products.map((p) => (
+
         <ProductCard
+        product={p}
           key={p._id}
           title={p.name}
           category={p.category}

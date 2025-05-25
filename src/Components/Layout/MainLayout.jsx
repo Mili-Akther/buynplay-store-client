@@ -4,12 +4,21 @@ import Navbar from "../Navbar";
 
 const MainLayout = () => {
   return (
-    <div className="bg-black min-h-screen text-white overflow-x-hidden">
+    <div
+    style={{
+      backgroundColor: "var(--body-background)",
+      color: "var(--title)",
+      transition: "background-color 0.3s ease, color 0.3s ease",
+    }}
+  >
+    <div className=" min-h-screen text-white overflow-x-hidden">
       <Navbar></Navbar>
-      <div className="w-11/12 mx-auto ">
+      <div className=" mx-auto">
         <Outlet></Outlet>
       </div>
     </div>
+    </div>
+    
   );
 };
 

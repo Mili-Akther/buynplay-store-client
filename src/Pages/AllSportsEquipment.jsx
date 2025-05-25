@@ -11,12 +11,28 @@ const AllSportsEquipment = () => {
         setEquipment(data); 
       });
   }, []);
+
+  const handleSortByPrice = () => {
+    const sorted = [...equipmentList].sort((a, b) => a.price - b.price);
+    setEquipment(sorted);
+  };
+  
   
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-12">
-      <h2 className="text-2xl font-bold mb-6 text-white ">
+      <h2 className="text-2xl font-bold mb-6 ">
         All Sports Equipment
       </h2>
+      {/* sort button */}
+      <div className="flex justify-end mb-4">
+        <button
+          onClick={handleSortByPrice}
+          className="bg-orange-500 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded"
+        >
+          Sort by Price (Low to High)
+        </button>
+      </div>
+
       <div className="overflow-x-auto rounded-lg shadow-md">
         <table className="min-w-full bg-white border border-gray-200">
           <thead className="bg-gray-100 text-left text-gray-700 uppercase text-sm">

@@ -37,7 +37,7 @@ const Shop = () => {
   
 
   return (
-    <div className="max-w-11/12 mx-auto flex bg-black text-white">
+    <div className=" mx-auto flex text-white">
       {/* Sidebar */}
       <aside className="w-[300px] bg-[#1c1c1c] p-6 rounded-xl">
         <CategorySidebar onCategorySelect={setSelectedCategory} />

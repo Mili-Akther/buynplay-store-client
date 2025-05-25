@@ -4,7 +4,7 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Shop from "../Pages/Shop";
 import Register from "../Pages/Register";
-import Hero from "../Components/Sections/Hero";
+
 import MyEquipmentList from "../Pages/MyEquipmentList";
 import AddEquipment from "../Pages/AddEquipment";
 import PrivateRoute from "./PrivateRoute";
@@ -12,7 +12,7 @@ import AllSportsEquipment from "../Pages/AllSportsEquipment";
 import UpdateEquipment from "../Pages/UpdateEquipment";
 import ViewDetails from "../Pages/ViewDetails";
 import Error from "../Components/Error";
-
+import Hero from "../Components/Hero/Hero";
 
 const router = createBrowserRouter([
   {
@@ -22,13 +22,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        children: [
-          {
-            path: "/",
-            element: <Hero />,
-            loader: () => fetch("/slides.json"),
-          },
-        ],
+      
       },
       {
         path: "/login",

@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "../Sections/Hero/hero.css"
+import "./hero.css"
+
 import shoe1 from "../../../src/assets/images/shoe1.png";
 import cycle from "../../../src/assets/images/cycle.png";
 import tennis from "../../../src/assets/images/tennis.2.png";
@@ -90,13 +91,13 @@ const Hero = () => (
               className="w-full z-10 max-w-md drop-shadow-[0_0_40px_rgba(255,140,0,0.6)] transition-transform "
             />
           </div>
-          <div className="-mb-12 absolute bottom-14 right-32 product-card text-white max-w-md flex items-center justify-between space-x-4 space-y-6">
+          <div className="-mb-12 p-2 absolute bottom-14 right-32 rounded-xl bg-[#1e1e1e] text-white max-w-md flex items-center justify-between space-x-4 space-y-6">
             <div className="m-4">
               <h3 className="text-lg font-semibold">
                 {s.priceCard?.name || "priceCard Name"}
               </h3>
               <p className="text-sm text-gray-400">Popular Item</p>
-              <p className="text-lg font-bold mt-1">
+              <p className="text-lg font-bold mt-1 ">
                 {s.priceCard?.price || "$0"}
               </p>
             </div>

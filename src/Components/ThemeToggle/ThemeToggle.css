@@ -1,0 +1,28 @@
+:root {
+      --body-background: white;
+      --title: black;
+    }
+    
+    [data-theme='Light'] {
+      --body-background: white;
+      --title: black;
+    }
+    
+    [data-theme='dark'] {
+      --body-background: rgb(0, 0, 0);
+      --title: white;
+     
+    }
+    
+   
+
+    body {
+      background-color: var(--body-background);
+      color: var(--title);
+    }
+    
+    /* h1, h2, h3, h4, h5, h6 {
+      color: var(--title);
+    } */
+    
+ 

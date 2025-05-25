@@ -59,7 +59,7 @@ fetch("http://localhost:5000/equipment",{
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-10 bg-stone-900  shadow-lg rounded-lg mt-10">
+    <div className="max-w-4xl mx-auto px-6 py-10 bg-zinc-800  shadow-lg rounded-lg mt-10">
       <h2 className="text-3xl font-bold mb-8 text-center">Add New Equipment</h2>
 
       <form
@@ -71,36 +71,36 @@ fetch("http://localhost:5000/equipment",{
           type="email"
           value={user?.email || ""}
           readOnly
-          className="input input-bordered w-full"
+          className="input input-bordered w-full bg-stone-950"
         />
 
         <input
           type="text"
           value={user?.displayName || ""}
           readOnly
-          className="input input-bordered w-full"
+          className="input input-bordered w-full bg-stone-950"
         />
 
         {/* Image URL */}
         <div>
-          <label className="label font-semibold text-white">Image URL</label>
+          <label className="label font-semibold ">Image URL</label>
           <input
             type="text"
             name="image"
             placeholder="https://example.com/image.jpg"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-stone-950"
             required
           />
         </div>
 
         {/* Item Name */}
         <div>
-          <label className="label font-semibold text-white">Item Name</label>
+          <label className="label font-semibold ">Item Name</label>
           <input
             type="text"
             name="name"
             placeholder="Cricket Bat"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-stone-950"
             required
           />
         </div>
@@ -109,7 +109,7 @@ fetch("http://localhost:5000/equipment",{
         <div>
           <select
             name="category"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-stone-950 mt-6"
             required
           >
             <option value="">Select Category</option>
@@ -131,15 +131,15 @@ fetch("http://localhost:5000/equipment",{
             <option value="Sports Bra">Sports Bra</option>
           </select>
         </div>
-        
+
         {/* Price */}
         <div>
-          <label className="label font-semibold text-white">Price (USD)</label>
+          <label className="label font-semibold ">Price (USD)</label>
           <input
             type="number"
             name="price"
             placeholder="59.99"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-stone-950"
             step="0.01"
             required
           />
@@ -147,14 +147,12 @@ fetch("http://localhost:5000/equipment",{
 
         {/* Rating */}
         <div>
-          <label className="label font-semibold text-white">
-            Rating (0 - 5)
-          </label>
+          <label className="label font-semibold ">Rating (0 - 5)</label>
           <input
             type="number"
             name="rating"
             placeholder="4.5"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-stone-950"
             step="0.1"
             min="0"
             max="5"
@@ -164,52 +162,48 @@ fetch("http://localhost:5000/equipment",{
 
         {/* Processing Time */}
         <div>
-          <label className="label font-semibold text-white">
+          <label className="label font-semibold ">
             Processing Time (Delivery)
           </label>
           <input
             type="text"
             name="processingTime"
             placeholder="3-5 business days"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-stone-950"
             required
           />
         </div>
 
         {/* Stock Status */}
         <div>
-          <label className="label font-semibold text-white">
-            Stock Quantity
-          </label>
+          <label className="label font-semibold ">Stock Quantity</label>
           <input
             type="number"
             name="stock"
             placeholder="100"
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-stone-950"
             required
           />
         </div>
 
         {/* Customization */}
         <div>
-          <label className="label font-semibold text-white">
-            Customization
-          </label>
+          <label className="label font-semibold ">Customization</label>
           <input
             type="text"
             name="customization"
             placeholder="Bat with extra grip, hit paper etc."
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-stone-950"
           />
         </div>
 
         {/* Description */}
         <div className="md:col-span-2">
-          <label className="label font-semibold text-white">Description</label>
+          <label className="label font-semibold ">Description</label>
           <textarea
             name="description"
             placeholder="Describe the item in detail..."
-            className="textarea textarea-bordered w-full"
+            className="textarea textarea-bordered w-full bg-stone-950"
             rows="4"
             required
           ></textarea>
@@ -219,7 +213,7 @@ fetch("http://localhost:5000/equipment",{
         <div className="md:col-span-2 text-center">
           <button
             type="submit"
-            className="btn btn-warning px-8 text-lg font-semibold"
+            className="btn bg-orange-500 border-none px-8 text-lg font-semibold"
           >
             Add Equipment
           </button>

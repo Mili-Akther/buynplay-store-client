@@ -5,64 +5,67 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ProductCard from "./ProductCard";
 
+import skateboard from "../../src/assets/images/skateboard-popular.jpg";
+import shoePopular from "../../src/assets/images/popular-shoe.jpg";
+import badminton from "../../src/assets/images/badminton-popular.jpg";
+import CyclePopular from "../../src/assets/images/cycle-popular.png";
+import { Fade, Slide } from "react-awesome-reveal";
+
 const products = [
   {
     id: 1,
-    title: "The Guard Socks",
-    category: "Accessories",
+    title: "Skera Fast Track Black Skull Skate Board 28",
+    category: "sports",
     price: "$27",
-    image: "/images/socks.png",
+    image: skateboard,
     isNew: true,
   },
   {
     id: 2,
-    title: "North River White",
+    title: "Children Sports Shoe",
     category: "Shoes Collection",
     price: "$165",
-    image: "/images/shoes.png",
+    image: shoePopular,
     isNew: true,
   },
   {
     id: 3,
-    title: "Belle & Bell",
-    category: "Sports Bra",
+    title: "2 Aluminum Badminton Racket and 3 Pcs",
+    category: "Sports",
     price: "$90",
-    image: "/images/bra2.png",
+    image: badminton,
     isNew: false,
   },
   {
     id: 4,
-    title: "Majestic Rocket",
+    title: "Cradiac Squad 21 Speed High Performance Steel Mountain Cycles",
     category: "Sport Gear",
     price: "$190",
-    image: "/images/racket.png",
+    image: CyclePopular,
     isNew: false,
   },
 ];
 
 const PopularItems = () => {
   return (
-    <section className="bg-black text-white px-10 py-12">
+    <section className="  px-10 py-12 ">
       <h2 className="text-3xl font-bold mb-6">POPULAR ITEMS</h2>
 
-      <Swiper
-        modules={[Navigation, Pagination]}
-        slidesPerView={2}
-        spaceBetween={20}
-        breakpoints={{
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-        }}
-        navigation
-        pagination={{ clickable: true }}
-      >
-        {products.map((product) => (
-          <SwiperSlide key={product.id}>
-            <ProductCard product={product} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {products.map((product, index) => {
+          const isEven = index % 2 === 0;
+          return (
+            <Slide
+              key={product.id}
+              direction={isEven ? "left" : "right"}
+              duration={1500}
+              triggerOnce
+            >
+              <ProductCard product={product} />
+            </Slide>
+          );
+        })}
+      </div>
     </section>
   );
 };
