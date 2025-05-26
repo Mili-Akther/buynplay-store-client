@@ -37,7 +37,7 @@ BuyNPlay is a dynamic and responsive e-commerce web application designed for buy
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Screenshot](./screenshots/home.png)
+![Home Screenshot](./src/assets/images/home-screenshot.png)
 
 ---
 
