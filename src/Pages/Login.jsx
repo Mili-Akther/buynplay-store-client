@@ -5,7 +5,8 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import { auth } from "../Firebase/firebase.init";
 import { toast } from "react-toastify";
-
+import LoginLottieData from "../../src/assets/lottie/login-lottie.json";
+import Lottie from "lottie-react";
 // src/components/Login.jsx
 const Login = () => {
   const provider = new GoogleAuthProvider();
@@ -44,17 +45,16 @@ const Login = () => {
       });
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black px-4 text-black">
-      <div className="w-full max-w-lg bg-white p-10 rounded-lg shadow-2xl">
-        <h2 className="text-2xl font-bold text-center mb-6 text-black">
-          Login
-        </h2>
+    <div className="min-h-screen flex items-center justify-center  px-4 ">
+      <div className="text-center lg:text-left px-12 ">
+        <Lottie animationData={LoginLottieData}></Lottie>
+      </div>
+      <div className="w-full max-w-lg bg-stone-900 p-10 rounded-lg shadow-2xl">
+        <h2 className="text-2xl font-bold text-center mb-6 ">Login</h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="mb-4 text-black">
-            <label className="block mb-1 font-medium text-gray-700">
-              Email
-            </label>
+          <div className="mb-4 ">
+            <label className="block mb-1 font-medium ">Email</label>
             <input
               name="email"
               type="email"
@@ -64,10 +64,8 @@ const Login = () => {
             />
           </div>
 
-          <div className="mb-6 text-black">
-            <label className="block mb-1 font-medium text-gray-700">
-              Password
-            </label>
+          <div className="mb-6 ">
+            <label className="block mb-1 font-medium ">Password</label>
             <input
               name="password"
               type="password"
@@ -90,7 +88,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="w-full bg-amber-500 text-black font-semibold py-2 rounded hover:bg-yellow-500 transition"
+            className="w-full bg-amber-500  font-semibold py-2 rounded hover:bg-yellow-500 transition"
           >
             Login
           </button>
@@ -106,7 +104,10 @@ const Login = () => {
           <span className="text-gray-400 text-sm">or</span>
         </div>
 
-        <button onClick={handleGoogleSignIn} className="w-full flex items-center justify-center gap-2 bg-red-500 text-white py-2 rounded hover:bg-red-600 transition">
+        <button
+          onClick={handleGoogleSignIn}
+          className="w-full flex items-center justify-center gap-2 bg-red-500 text-white py-2 rounded hover:bg-red-600 transition"
+        >
           <FaGoogle></FaGoogle>
           Continue with Google
         </button>
